@@ -17,6 +17,12 @@ function getHeight() {
           document.documentElement.clientHeight
      );
 }
+var width;
+var height;
+function load() {
+     width = getWidth();
+     height = getHeight();
+}
 function convertRemToPixels(rem) {    
      return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
@@ -29,9 +35,9 @@ function cloneGif() {
           clone.classList.add("clone");
           clone.onclick = function() {cloneGif();};
           clone.style.left = 
-               Math.floor(Math.random() * (getWidth() + convertRemToPixels(6))) - convertRemToPixels(3) + "px";
+               Math.floor(Math.random() * (width - convertRemToPixels(6))) + "px";
           clone.style.top = 
-               Math.floor(Math.random() * (getHeight() - convertRemToPixels(6))) + "px";
+               Math.floor(Math.random() * (height - convertRemToPixels(6))) + "px";
           document.body.appendChild(clone);
      }
      num *= 2;
