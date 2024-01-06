@@ -29,7 +29,7 @@ function cloneGif() {
           clone.classList.add("clone");
           clone.onclick = function() {cloneGif();};
           clone.style.left = 
-               Math.floor(Math.random() * (getWidth())) - convertRemToPixels(6) + "px";
+               Math.floor(Math.random() * (getWidth() + convertRemToPixels(6))) - convertRemToPixels(3) + "px";
           clone.style.top = 
                Math.floor(Math.random() * (getHeight() - convertRemToPixels(6))) + "px";
           document.body.appendChild(clone);
