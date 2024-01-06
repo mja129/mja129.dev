@@ -1,3 +1,7 @@
+html, body {
+     max-width: 100%;
+     overflow-x: hidden;
+}
 body {
      background-color:antiquewhite;
      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -50,10 +54,16 @@ img {
 .title {
      font-size: 1.2rem;
 }
+a {
+     text-decoration: underline blue;
+}
 a, .title {
      background: #4C15FF;
      background: linear-gradient(to right, #4C15FF 0%, #FF5EEA 73%);
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
      background-clip: text;
+}
+.clone {
+     position: absolute;
 }
