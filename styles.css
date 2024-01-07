@@ -54,12 +54,15 @@ img {
 }
 .hbg {
      width: fit-content;
+     margin: auto;
      padding: .5rem;
      background-color: rgba(255, 255, 255, .75);
      border-radius: .5rem;
 }
 .title {
-     font-size: 1.2rem;
+     font-size: 3rem;
+     width: 100%;
+     text-align: center;
 }
 a {
      text-decoration: underline blue;
