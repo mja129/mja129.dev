@@ -191,7 +191,10 @@ function textClick() {
           gif.classList.add("explode");
           gif.src = "./explosion.gif";
           document.body.appendChild(gif);
-          setTimeout(() => {gif.remove();}, 300);
+          max = 1000;
+          setTimeout(() => {
+               gif.remove();
+          }, 300);
      }
 }
 function flickerOff() {
