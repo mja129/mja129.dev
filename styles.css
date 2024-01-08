@@ -52,9 +52,9 @@ img {
      margin-left: 2rem;
      margin-right: 2rem;
 }
-.hbg {
+.hbg, .other {
      width: fit-content;
-     margin: auto;
+     margin: .5rem auto .5rem auto;
      padding: .5rem;
      background-color: rgba(255, 255, 255, .75);
      border-radius: .5rem;
@@ -67,12 +67,17 @@ img {
 a {
      text-decoration: underline blue;
 }
-a, .title {
+#recslides, .title, #email {
      background: #4C15FF;
      background: linear-gradient(to right, #4C15FF 0%, #FF5EEA 73%);
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
      background-clip: text;
+}
+.slidesmirror, .projhelp {
+     width: 100%;
+     text-align: center;
+     color: rgb(170, 0, 255);
 }
 .clone {
      position: absolute;
