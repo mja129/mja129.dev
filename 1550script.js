@@ -186,7 +186,7 @@ async function updateDisplay(n) {
 var max = 1000;
 function textClick() {
      max *= .7;
-     if (max < 100) {
+     if (max < 50) {
           gif = document.createElement("img");
           gif.classList.add("explode");
           gif.src = "./explosion.gif";
