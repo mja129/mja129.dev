@@ -1,0 +1,141 @@
+html, body {
+     width: 100%;
+     height: min(100%, 2000px);
+     padding: 0;
+     margin: auto;
+}
+body {
+     background-image: url("assets/bg.png");
+     background-size: 50px;
+}
+#back {
+     position: absolute;
+     top: 10px;
+     left: 10px;
+     height: auto;
+     width: min(50px, 10%);
+     transition: .25s;
+}
+#back:hover {
+     width: min(60px, 12%);
+}
+
+@font-face {
+     font-family: sevenseg;
+     src: url(SevenSegment.ttf);
+}
+
+.container {
+     position: relative;
+     margin: auto;
+     width: min(500px, 100%);
+     height: min(1000px, 200vw);
+     object-fit: fill;
+}
+p {
+     position: absolute;
+     font-family: sevenseg;
+     color: #2BB673;
+     font-size: min(32px, 6.4vw);
+     text-align: center;
+     height: min(37px, 3.7%);
+     width: min(29.4px, 5.88%);
+     top: min(648px, 64.8%);
+}
+#bin0 {
+     left: min(108px, 21.6%);
+}
+#bin1 {
+     left: min(139.23px, 27.84%);
+}
+#bin2 {
+     left: min(170.46px, 34.092%);
+}
+#bin3 {
+     left: min(201.69px, 40.338%);
+}
+#btn {
+     position: absolute;
+     height: min(101px, 10.1%);
+     width: min(101px, 20.2%);
+     top: min(868px, 86.8%);
+     left: min(73px, 14.6%);
+}
+img {
+     position: absolute;
+     top: 0%;
+     left: 0%;
+     width: min(500px, 100%);
+}
+.hide {
+     display: none;
+}
+.box {
+     width: min(397px, 39.7%);
+     left: min(71.8px, 14.36%);
+     transition: .25s;
+     cursor: pointer;
+}
+#frame2a {
+     top: min(70px, 7%);
+     left: min(261.748px, 52.35118%);
+     width: auto;
+     height: min(calc(1140.7742px / 2), 57.03871%);
+}
+#frame2b {
+     top: min(633.5px, 63.35%);
+     left: min(71px, 14.36%);
+     width: min(calc(396.2688px / 2), 39.62688%);
+     height: auto;
+}
+.selected {
+     transform: translate(-7.5px, -7.5px);
+}
+#op1box {
+     top: min(70.8px, 7.08%);
+}
+#op2box {
+     top: min(105.93635px, 10.593635%);
+}
+#op3box {
+     top: min(141.0727px, 14.10727%);
+}
+#op4box {
+     top: min(176.20905px, 17.620905%);
+}
+#op5box {
+     top: min(211.34539999999998px, 21.134539999999998%);
+}
+#op6box {
+     top: min(246.48174999999998px, 24.648175%);
+}
+#op7box {
+     top: min(281.6181px, 28.161810000000003%);
+}
+#op8box {
+     top: min(316.75445px, 31.675445000000003%);
+}
+#op9box {
+     top: min(351.8908px, 35.189080000000004%);
+}
+#op10box {
+     top: min(387.02715px, 38.702715%);
+}
+#op11box {
+     top: min(422.1635px, 42.21635%);
+}
+#op12box {
+     top: min(457.29985px, 45.729985%);
+}
+#op13box {
+     top: min(492.43620000000004px, 49.24362000000001%);
+}
+#op14box {
+     top: min(527.57255px, 52.757255%);
+}
+#op15box {
+     top: min(562.7089px, 56.270889999999994%);
+}
+#op16box {
+     top: min(597.84525px, 59.784524999999995%);
+}
