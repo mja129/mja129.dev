@@ -9,12 +9,28 @@ var panelToBin;
 var binToPt;
 var ptToRam;
 var ramToBtn;
+var titleText;
 var bin = []
 var button;
 var working = false;
 var cleared = true;
 const links = [
-     "https://google.com", // recitation 1
+     null, // 0x0F
+     null, // 0x0E
+     null, // 0x0D
+     null, // 0x0C
+     null, // 0x0B
+     null, // 0x0A
+     null, // 0x09
+     null, // 0x08
+     null, // 0x07
+     null, // 0x06
+     null, // 0x05
+     null, // 0x04
+     null, // 0x03
+     null, // 0x02
+     null, // 0x01
+     "https://google.com", // 0x00
 ]
 function init() {
      panelToBin = document.getElementById("paneltobin");
@@ -22,6 +38,7 @@ function init() {
      ptToRam = document.getElementById("pttoram");
      ramToBtn = document.getElementById("ramtobtn");
      button = document.getElementById("btn");
+     titleText = document.getElementById("recslides");
      for (var i = 1; i <= 16; i++) {
           wires[i - 1] = document.getElementById("op" + i + "wire");
           boxes[i - 1] = document.getElementById("op" + i + "box");
@@ -42,6 +59,7 @@ function init() {
           rootarrows[i] = document.getElementById("rootarr" + i);
           bin[i] = document.getElementById("bin" + i);
      }
+     flickerOff();
 }
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
@@ -109,6 +127,8 @@ async function updateDisplay(n) {
      }
      num = 15 - n;
      var k = 0;
+     console.log(num);
+     console.log((num >>> 0).toString(2));
      for (var i = 0; i < 4; i++) {
           k = i;
           for (var j = 0; j < 20; j++) {
@@ -117,8 +137,8 @@ async function updateDisplay(n) {
                if (k == 4) {k = i;}
                await sleep(10);
           }
-          bit = (num >>> 0).toString(2).charAt(3 - i)
-          bin[i].innerHTML = bit == "" ? "0" : bit;
+          bit = (num >>> 0).toString(2).padStart(4, "0").charAt(i);
+          bin[i].innerHTML = bit;
      }
      await sleep(200);
      binToPt.style.display = "inline";
@@ -161,4 +181,24 @@ async function updateDisplay(n) {
      }
      working = false;
      cleared = false;
+}
+
+var max = 1000;
+function textClick() {
+     max *= .7;
+     if (max < 100) {
+          gif = document.createElement("img");
+          gif.classList.add("explode");
+          gif.src = "./explosion.gif";
+          document.body.appendChild(gif);
+          setTimeout(() => {gif.remove();}, 300);
+     }
+}
+function flickerOff() {
+     titleText.style.color = "green";
+     setTimeout(() => {flickerOn();}, Math.floor(Math.random() * max));
+}
+function flickerOn() {
+     titleText.style.color = "#2fff00";
+     setTimeout(() => {flickerOff();}, Math.floor(Math.random() * max));
 }

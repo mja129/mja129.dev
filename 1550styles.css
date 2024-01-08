@@ -31,8 +31,24 @@ body {
      width: min(500px, 100%);
      height: min(1000px, 200vw);
      object-fit: fill;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
 }
-p {
+#recslides {
+     position: absolute;
+     font-family: sevenseg;
+     color: #2fff00;
+     font-size: min(35px, 7vw);
+     text-align: center;
+     top: min(250px, 25%);
+     left: min(330px, 66%);
+     cursor: pointer;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+}
+.bin {
      position: absolute;
      font-family: sevenseg;
      color: #2BB673;
@@ -138,4 +154,12 @@ img {
 }
 #op16box {
      top: min(597.84525px, 59.784524999999995%);
+}
+
+.explode {
+     position: absolute;
+     width: min(200px, 40%);
+     height: auto;
+     left: calc(50% + 60px);
+     top: 20%;
 }
