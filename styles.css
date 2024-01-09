@@ -54,10 +54,17 @@ img {
 }
 .hbg, .other {
      width: fit-content;
-     margin: .5rem auto .5rem auto;
+     margin: 2rem auto 2rem auto;
      padding: .5rem;
-     background-color: rgba(255, 255, 255, .75);
+     background-color: rgba(255, 255, 255, 1);
      border-radius: .5rem;
+     box-shadow: .2rem 1rem 1rem rgb(68, 68, 68);
+     transition: .25s;
+     transform: scale(1);
+}
+.hbg:hover, .other:hover {
+     transform: scale(1.1);
+     box-shadow: .5rem 1.5rem 1.5rem rgb(68, 68, 68)
 }
 .title {
      font-size: 1.5rem;
