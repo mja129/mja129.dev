@@ -64,9 +64,6 @@ img {
      width: 100%;
      text-align: center;
 }
-a {
-     text-decoration: underline blue;
-}
 #recslides, .title, #email {
      background: #4C15FF;
      background: linear-gradient(to right, #4C15FF 0%, #FF5EEA 73%);
