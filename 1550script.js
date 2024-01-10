@@ -10,7 +10,7 @@ var binToPt;
 var ptToRam;
 var ramToBtn;
 var titleText;
-var bin = []
+var bin = [];
 var button;
 var working = false;
 var cleared = true;
