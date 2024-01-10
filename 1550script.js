@@ -77,7 +77,9 @@ async function boxclick(n) {
           }
           updateBin(n);
           if (selected == null) {
-               await sleep(800);
+               await sleep(1000);
+          } else {
+               await sleep(200);
           }
           selected = n;
           updateDisplay(n);
