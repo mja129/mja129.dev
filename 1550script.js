@@ -75,6 +75,10 @@ async function boxclick(n) {
           } else {
                panelToBin.style.display = "inline";
           }
+          updateBin(n);
+          if (selected == null) {
+               await sleep(800);
+          }
           selected = n;
           updateDisplay(n);
      } else {
@@ -124,21 +128,6 @@ async function updateDisplay(n) {
           ptToRam.style.display = "none";
           await sleep(200);
           ramToBtn.style.display = "none";
-     }
-     num = 15 - n;
-     var k = 0;
-     console.log(num);
-     console.log((num >>> 0).toString(2));
-     for (var i = 0; i < 4; i++) {
-          k = i;
-          for (var j = 0; j < 20; j++) {
-               bin[k].innerHTML = Math.floor(Math.random() * 9);
-               k++;
-               if (k == 4) {k = i;}
-               await sleep(10);
-          }
-          bit = (num >>> 0).toString(2).padStart(4, "0").charAt(i);
-          bin[i].innerHTML = bit;
      }
      await sleep(200);
      binToPt.style.display = "inline";
@@ -195,6 +184,21 @@ function textClick() {
           setTimeout(() => {
                gif.remove();
           }, 300);
+     }
+}
+async function updateBin(n) {
+     num = 15 - n;
+     var k = 0;
+     for (var i = 0; i < 4; i++) {
+          k = i;
+          for (var j = 0; j < 20; j++) {
+               bin[k].innerHTML = Math.floor(Math.random() * 9);
+               k++;
+               if (k == 4) {k = i;}
+               await sleep(10);
+          }
+          bit = (num >>> 0).toString(2).padStart(4, "0").charAt(i);
+          bin[i].innerHTML = bit;
      }
 }
 function flickerOff() {
