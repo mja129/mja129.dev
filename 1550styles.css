@@ -1,15 +1,14 @@
 html, body {
      width: 100%;
-     height: 100%;
+     height: min(100%, 2000px);
      padding: 0;
      margin: auto;
      animation: fadeIn ease 1s;
      animation-iteration-count: 1;
      animation-fill-mode: forwards;
-}
-body {
-     background-image: url("assets/bg.png");
+     background-image: url("assets/background.png");
      background-size: 50px;
+     overflow-x: hidden;
 }
 @keyframes fadeIn {
      0% {
