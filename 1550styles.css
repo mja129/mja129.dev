@@ -1,6 +1,6 @@
 html, body {
      width: 100%;
-     height: min(100%, 2000px);
+     height: 100%;
      padding: 0;
      margin: auto;
      animation: fadeIn ease 1s;
@@ -38,6 +38,7 @@ body {
 
 .container {
      position: relative;
+     top: max(calc((100% - 1000px) / 2), 0px);
      margin: auto;
      width: min(500px, 100%);
      height: min(1000px, 200vw);
@@ -171,6 +172,6 @@ img {
      position: absolute;
      width: min(200px, 40%);
      height: auto;
-     left: calc(50% + 60px);
-     top: 20%;
+     left: 62%;
+     top: 22%;
 }

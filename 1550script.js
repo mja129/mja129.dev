@@ -181,7 +181,7 @@ function textClick() {
           gif = document.createElement("img");
           gif.classList.add("explode");
           gif.src = "./explosion.gif";
-          document.body.appendChild(gif);
+          document.getElementById("container").appendChild(gif);
           max = 1000;
           setTimeout(() => {
                gif.remove();
