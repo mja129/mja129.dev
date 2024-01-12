@@ -30,7 +30,7 @@ const links = [
      null, // 0x03
      null, // 0x02
      null, // 0x01
-     "https://google.com", // 0x00
+     "https://drive.google.com/file/d/1BBL9IOJD4PDWpdeljBxhwC6y26DJD_39/view?usp=sharing", // 0x00
 ]
 function init() {
      panelToBin = document.getElementById("paneltobin");
