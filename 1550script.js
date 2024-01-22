@@ -29,7 +29,7 @@ const links = [
      null, // 0x04
      null, // 0x03
      null, // 0x02
-     null, // 0x01
+     "https://drive.google.com/file/d/19Yn8-8EOW68abCgAwKcFVX6NJ6g-qmUX/view?usp=sharing", // 0x01
      "https://drive.google.com/file/d/1BBL9IOJD4PDWpdeljBxhwC6y26DJD_39/view?usp=sharing", // 0x00
 ]
 function init() {
