@@ -28,7 +28,7 @@ const links = [
      null, // 0x05
      null, // 0x04
      null, // 0x03
-     null, // 0x02
+     "https://drive.google.com/file/d/1-iNzE-dqFm6XgDq_cAeYFxn5k-_yeZOh/view?usp=sharing", // 0x02
      "https://drive.google.com/file/d/19Yn8-8EOW68abCgAwKcFVX6NJ6g-qmUX/view?usp=sharing", // 0x01
      "https://drive.google.com/file/d/1CrXdVg35PLtAyRI1gxuQKGy7rsudJVfJ/view?usp=sharing", // 0x00
 ]
