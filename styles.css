@@ -81,6 +81,9 @@ img {
 }
 .slidesmirror, .projhelp {
      width: 100%;
+     display: flex;
+     justify-content: center;
+     line-height: 1.5rem;
      text-align: center;
      color: rgb(170, 0, 255);
 }
