@@ -45,8 +45,21 @@
                </span>
           </div>
           <div class="other">
-               <a href="https://forms.gle/VvZ3p16rAHH4GZc3A">
-                    <span class="slidesmirror">
+               <a onclick="
+                    const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+                    setTimeout( () => {
+                         window.open('https://forms.gle/VvZ3p16rAHH4GZc3A').focus()
+                         location.reload()
+                    }, 1000)
+                    async function func() {
+                         for (var i = 0; i < 10; i++) {
+                              cloneGif()
+                              await sleep(100);
+                         }
+                    }
+                    func()
+               " target="_blank" style="cursor: pointer; text-decoration: underline;">
+                    <span class="slidesmirror" id="form">
                          Recitation Feedback Form
                     </span>
                </a>

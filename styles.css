@@ -72,7 +72,7 @@ img {
      width: 100%;
      text-align: center;
 }
-#recslides, .title, #email {
+#recslides, .title, #email, #form {
      background: #4C15FF;
      background: linear-gradient(to right, #4C15FF 0%, #FF5EEA 73%);
      -webkit-background-clip: text;
