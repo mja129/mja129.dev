@@ -24,13 +24,13 @@ const links = [
      null, // 0x09
      null, // 0x08
      null, // 0x07
-     "https://drive.google.com/file/d/1UlH6-_SLwyt5q900btIdyJkZCDrpQM5D/view?usp=sharing", // 0x06
-     "https://drive.google.com/file/d/1330asddvFvPyyiaD6nXlOOrJms1glj3k/view?usp=sharing", // 0x05
-     "https://drive.google.com/file/d/1y1h7fXoaIcndnagqJduiam9M3bd5CICs/view?usp=sharing", // 0x04
-     "https://drive.google.com/file/d/1bfDdBFYrlHCpKc6ka71cah8y13DQNQ6w/view?usp=sharing", // 0x03
-     "https://drive.google.com/file/d/1MfgOiPHb5qDXtw0fM2xOxPDJSwxcCKGA/view?usp=sharing", // 0x02
-     "https://drive.google.com/file/d/19Yn8-8EOW68abCgAwKcFVX6NJ6g-qmUX/view?usp=sharing", // 0x01
-     "https://drive.google.com/file/d/1CrXdVg35PLtAyRI1gxuQKGy7rsudJVfJ/view?usp=sharing", // 0x00
+     null, // 0x06
+     null, // 0x05
+     null, // 0x04
+     null, // 0x03
+     null, // 0x02
+     null, // 0x01
+     null, // 0x00
 ]
 function init() {
      panelToBin = document.getElementById("paneltobin");
