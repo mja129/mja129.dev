@@ -4,16 +4,16 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width">
-     <title>Home</title>
+     <title>Segfault Squadron</title>
      <link rel="stylesheet" href="styles.css">
      <script src="script.js"></script>
 </head>
-<body>
+<body onload="init()">
      <span class="headER">
           <div class="head">
                <p>
                     <div class="txt">⇨ Matthew Anderson</div>
-                    </br>
+                    <br>
                     <div class="txt">⇨ 
                          <a id="email" href="mailto:mja129@pitt.edu">mja129@pitt.edu</a>
                     </div>
@@ -64,6 +64,15 @@
                     </span>
                </a>
           </div> -->
+     </div>
+     <div class="cubby">
+          <img class="cfull" src="assets/bomb.png">
+          <div class="playButton undisplay" id="btn" onclick="brick()"></div>
+          <img class="plate cfull" id="plate" src="assets/plate.png">
+          <img class="screw" id="screw0" src="assets/screw.png">
+          <img class="screw" id="screw1" src="assets/screw.png">
+          <img class="screw" id="screw2" src="assets/screw.png">
+          <img class="screw" id="screw3" src="assets/screw.png">
      </div>
 </body>
 </html>
