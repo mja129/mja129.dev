@@ -98,7 +98,8 @@ function spawn() {
      interval = setInterval(function() {
           var w = banner.getBoundingClientRect().width;
           var r = spawner.getBoundingClientRect();
-          var box = Bodies.rectangle(w/2, r.top - convertRemToPixels(11) + (r.height / 2), 40, 40, { render: {
+          console.log(r.top);
+          var box = Bodies.rectangle(w/2, r.top + window.scrollY - convertRemToPixels(11) + (r.height / 2), 40, 40, { render: {
                fillStyle: colors[Math.floor(Math.random()*colors.length)]
           } });
           Composite.add(engine.world, box);
