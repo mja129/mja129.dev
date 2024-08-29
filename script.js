@@ -69,10 +69,10 @@ function init() {
                wireframeBackground: 'transparent'
           }
      });
-     topBound = Bodies.rectangle(w/2, -10, w, 20, { isStatic: true, render: {fillStyle: 'transparent'} });
-     bottomBound = Bodies.rectangle(w/2, h + 10, w, 20, { isStatic: true, render: {fillStyle: 'transparent'} });
-     leftBound = Bodies.rectangle(-10, h/2, 20, h, { isStatic: true, render: {fillStyle: 'transparent'} });
-     rightBound = Bodies.rectangle(w + 10, h/2, 20, h, { isStatic: true, render: {fillStyle: 'transparent'} });
+     topBound = Bodies.rectangle(w/2, -25, w, 50, { isStatic: true, render: {fillStyle: 'transparent'} });
+     bottomBound = Bodies.rectangle(w/2, h + 25, w, 50, { isStatic: true, render: {fillStyle: 'transparent'} });
+     leftBound = Bodies.rectangle(-25, h/2, 50, h, { isStatic: true, render: {fillStyle: 'transparent'} });
+     rightBound = Bodies.rectangle(w + 25, h/2, 50, h, { isStatic: true, render: {fillStyle: 'transparent'} });
           
      // add all of the bodies to the world
      Composite.add(engine.world, [leftBound, rightBound, topBound, bottomBound]);
@@ -98,12 +98,20 @@ function spawn() {
      interval = setInterval(function() {
           var w = banner.getBoundingClientRect().width;
           var r = spawner.getBoundingClientRect();
-          console.log(r.top);
-          var box = Bodies.rectangle(w/2, r.top + window.scrollY - convertRemToPixels(11) + (r.height / 2), 40, 40, { render: {
-               fillStyle: colors[Math.floor(Math.random()*colors.length)]
-          } });
+          var s = Math.random() >= .999 ? 200 : 40;
+          console.log(Math.random());
+          var box = Bodies.rectangle(w/2, r.top + window.scrollY - convertRemToPixels(11) + (r.height / 2), s, s, 
+               {
+                    render: {
+                         fillStyle: colors[Math.floor(Math.random()*colors.length)]
+                    } 
+               }
+          );
           Composite.add(engine.world, box);
-          Body.setVelocity(box, {x: ((Math.random() * 5) + 10) * (Math.random() > .5 ? 1 : -1), y: (Math.random() * 20) - 15});
+          Body.setVelocity(box, {
+               x: ((Math.random() * 5) + 10) * (Math.random() > .5 ? 1 : -1), 
+               y: (Math.random() * 20) - 15
+          });
           Body.setAngularSpeed(box, Math.random() * 2 - 1);
      }, 100);
 }
@@ -130,10 +138,10 @@ window.onresize = function() {
      Body.scale(bottomBound, w/prevW, 1);
      Body.scale(leftBound, 1, h/prevH);
      Body.scale(rightBound, 1, h/prevH);
-     Body.setPosition(topBound, {x: w/2, y: -10});
-     Body.setPosition(bottomBound, {x: w/2, y: h + 10});
-     Body.setPosition(leftBound, {x: -10, y: h/2});
-     Body.setPosition(rightBound, {x: w + 10, y: h/2});
+     Body.setPosition(topBound, {x: w/2, y: -25});
+     Body.setPosition(bottomBound, {x: w/2, y: h + 25});
+     Body.setPosition(leftBound, {x: -25, y: h/2});
+     Body.setPosition(rightBound, {x: w + 25, y: h/2});
      prevW = w;
      prevH = h;
 };
