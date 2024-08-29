@@ -92,7 +92,19 @@ img {
      line-height: 1.5rem;
      text-align: center;
      color: rgb(170, 0, 255);
+     cursor: pointer;
 }
 .clone {
      position: absolute;
+}
+#trapdoor {
+     text-align: center;
+     cursor: pointer;
+     opacity: 0;
+     transition: all .5s;
+     font-size: 4rem;
+     position: fixed;
+     left: 50%;
+     transform: translateX(-50%);
+     bottom: 0px;
 }
