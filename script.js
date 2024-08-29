@@ -110,11 +110,16 @@ function spawn() {
 function kill() {
      clearInterval(interval);
 }
+var trapped = false;
 function trap() {
-     Body.scale(bottomBound, .001, .001);
-     setTimeout(function() {
-          Body.scale(bottomBound, 1000, 1000);
-     }, 1500);
+     if (!trapped) {
+          trapped = true;
+          Body.scale(bottomBound, .001, .001);
+          setTimeout(function() {
+               Body.scale(bottomBound, 1000, 1000);
+               trapped = false;
+          }, 1500);
+     }
 }
 
 window.onresize = function() {
