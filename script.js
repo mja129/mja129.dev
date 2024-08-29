@@ -110,9 +110,9 @@ function kill() {
      clearInterval(interval);
 }
 function trap() {
-     Body.scale(bottomBound, .01, .01);
+     Body.scale(bottomBound, .001, .001);
      setTimeout(function() {
-          Body.scale(bottomBound, 100, 100);
+          Body.scale(bottomBound, 1000, 1000);
      }, 1500);
 }
 
