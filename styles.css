@@ -35,9 +35,9 @@ body {
 }
 .img {
      float: right;
-     cursor: pointer;
 }
 img {
+     cursor: pointer;
      height: 6rem;
      margin-right: 5vw;
 }
