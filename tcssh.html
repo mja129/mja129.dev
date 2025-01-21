@@ -18,20 +18,22 @@
           <h1>Tinycore Linux SSH setup</h1>
           <ul>
                <li>
-                    <p>Download <a href="/ssh_script.sh" download>this script</a> and get it into your virtual machine via scp, as described in the project PDF</p>
+                    <b>KEEP IN MIND THIS WILL ONLY WORK FOR PROJECT 1. THE REST OF THE PROJECTS ARE ON A DIFFERENT LINUX DISTRO</b>
+                    <p>RemoteSSH will not work, since this distro is unsupported, but once this is set up, you can use something like <code>rsync</code> or <code>SSHFS</code> to sync directories.</p>
+               </li>
+               <li>
+                    <p>Pull the setup script from linux-ts <b>into your VM</b> with the following:</p>
+                    <code>scp &lt;YOUR_USERNAME&gt;@linux-ts.it.pitt.edu:/afs/pitt.edu/home/m/j/mja129/public/ssh_script.sh .</code>
                </li>
                <li>
                     <p>Run '<code>chmod +x ssh_script.sh</code>' to give it execute permissions</p>
                </li>
                <li>
-                    <p>Run the script with '<code>./ssh_script.sh</code>' (this will shutdown your virtual machine, and set the 'tc' user's password to "password123")</p>
+                    <p>Run the script with '<code>./ssh_script.sh</code>' (this will shutdown your virtual machine, and set the 'tc' user's password to "password123", along with a handful of other setup stuff)</p>
                </li>
                <li>
-                    <p>Before starting the VM back up, we need to forward the VM's port 22 to a different port on the host machine. We'll use 22022</p>
-                    <p>Add the following to your start script (start.bat if you're on windows, start.sh on unix/mac):</p>
-                    <code>-nic user,hostfwd=tcp::22022-:22</code>
-                    <p>Make sure to properly escape the newline with a '\' on unix or a '^' on windows</p>
-                    <p>So, for example, your whole file on unix/mac will look like this:</p>
+                    <p>Before starting the VM back up, we need to forward the VM's port 22 to a different port on the host machine. We'll use 22022.</p>
+                    <p>On UNIX (Linux and MacOS), add a line at the bottom of start.sh like so:</p>
                     <code>#!/bin/sh <br>
                          qemu-system-arm -kernel zImage -cpu arm1176 -m 256 -M versatilepb -no-reboot \<br>
                          -serial stdio -initrd piCore.gz -append \<br>
@@ -39,6 +41,11 @@
                          -hda disk.qcow2 \<br>
                          -nic user,hostfwd=tcp::22022-:22
                          </code>
+                    <p>On Windows, change the first line like so:</p>
+                    <code>qemu-system-arm -kernel zImage -cpu arm1176 -m 256 -M versatilepb -no-reboot -net nic -net user,hostfwd=tcp::22022-:22 ^<br>
+                         -serial stdio -initrd piCore.gz ^<br>
+                         -append "root=/dev/ram0 elevator=deadline rootwait quiet nozswap nortc noswap tce=sda1 home=sda1" ^<br>
+                         -hda disk.qcow2</code>
                </li>
                <li>
                     <p>Run your new start script.</p>
