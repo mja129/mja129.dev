@@ -41,7 +41,7 @@
                          -hda disk.qcow2 \<br>
                          -nic user,hostfwd=tcp::22022-:22
                          </code>
-                    <p>On Windows, change the first line like so:</p>
+                    <p>On Windows, open start.bat in a text editor and make it look like this:</p>
                     <code>qemu-system-arm -kernel zImage -cpu arm1176 -m 256 -M versatilepb -no-reboot -net nic -net user,hostfwd=tcp::22022-:22 ^<br>
                          -serial stdio -initrd piCore.gz ^<br>
                          -append "root=/dev/ram0 elevator=deadline rootwait quiet nozswap nortc noswap tce=sda1 home=sda1" ^<br>
