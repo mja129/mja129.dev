@@ -92,6 +92,17 @@
                         </div>
                     </div>
                 </div>
+                <div data-ifurl="" id="afs-window" class="d-window afs-window window" style="display: none; opacity: 0; position: fixed;">
+                    <div id="afs-window-bar" class="f-title title-bar">
+                        <div class="title-bar-text unselectable"></div>
+                        <div class="title-bar-controls">
+                            <button id="af-close" class="f-close" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body scroller">
+                        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"></iframe>
+                    </div>
+                </div>
                 <div id="exe0-window" class="d-window exe-window window" style="display: none; opacity: 0; position: fixed;">
                     <div id="exe0-window-bar" class="f-title title-bar">
                         <div class="title-bar-text unselectable"></div>
@@ -164,11 +175,11 @@
                     <div class="window-body scroller">
                         <div style="height: 350px; width: 350px; background: #222; overflow: hidden; position: relative;">
                             <textarea data-wd="/" onkeydown="term_input(event)" onfocus="term_focus_in(event)" id="input" class="term-font" style="height: 300px; width: 96%; background: none; color: white; resize: none; overflow: hidden; position: absolute; top: 50px; left: 0; box-shadow: none; line-height: 25px; padding: 0; margin: 0 2%;">&gt;&nbsp;</textarea>
-                            <textarea id="display" readonly="true" class="term-font" style="width: 96%; background: none; color: white; resize: none; overflow: hidden; position: absolute; top: 0; left: 0; pointer-events: none; box-shadow: none; line-height: 25px; padding: 0; margin: 0 2%;">Welcome to my site's (sparsely featured) Unix-like terminal! Try 'help' :-)&#13;&#10;</textarea>
+                            <textarea id="display" readonly="true" class="term-font" style="width: 96%; background: none; color: white; resize: none; overflow: hidden; position: absolute; top: 0; left: 0; box-shadow: none; line-height: 25px; padding: 0; margin: 0 2%;" onfocus="event.target.previousElementSibling.focus()">Welcome to my site's (sparsely featured) Unix-like terminal! Try 'help' :-)&#13;&#10;</textarea>
                         </div>
                     </div>
                 </div>
-                <img id="FAAHHHHHHH" src="assets/FAAHHHHHH.jpg" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; opacity: 0; pointer-events: none;">
+                <img id="FAAHHHHHHH" src="assets/FAAHHHHHH.jpg" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; opacity: 0; pointer-events: none; z-index: 9999">
             </div>
         </div>
     </body>

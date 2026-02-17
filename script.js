@@ -21,10 +21,11 @@ var FILES = [
     type: 'tf',
     name: 'Credits.txt',
     content: 'Lots of styling from <a href="https://jdan.github.io/98.css/" target="_blank">98.css</a><br><br><h style="font-size:15px;">\
-    Song: Nuphory & Chikaya - Make Me Feel<br>Music provided by NoCopyrightSounds<br>Free Download/Stream: <a href="http://ncs.io/makemefeel" target="_blank">http://ncs.io/makemefeel</a><br>Watch: <a href="http://ncs.lnk.to/makemefeelAT/youtube" target="_blank">http://ncs.lnk.to/makemefeelAT/youtube</a><br><br>\
-    Song: Mo Falk & MADZI - Let\'s Go<br>Music provided by NoCopyrightSounds<br><br>\
+    Soundcloud tracks are linked in their embeds lol<br><br>\
+    Music provided by NoCopyrightSounds:<br><br>\
+    Song: LAADS - Bad Girl<br><br>\
+    Song: Nuphory & Chikaya - Make Me Feel<br>Free Download/Stream: <a href="http://ncs.io/makemefeel" target="_blank">http://ncs.io/makemefeel</a><br>Watch: <a href="http://ncs.lnk.to/makemefeelAT/youtube" target="_blank">http://ncs.lnk.to/makemefeelAT/youtube</a><br><br>\
     Song: KUČKA - Never Give Up On Loving You<br>Music provided by NoCopyrightSounds<br>Free Download/Stream: <a href="http://ncs.io/NGUOLY" target="_blank">http://ncs.io/NGUOLY</a><br>Watch: <a href="http://ncs.lnk.to/NGUOLYAT/youtube" target="_blank">http://ncs.lnk.to/NGUOLYAT/youtube</a><br><br>\
-    Song: D4N, ADB - Feel That Way<br>Music provided by NoCopyrightSounds<br>Free Download/Stream: <a href="http://ncs.io/feelthatway" target="_blank">http://ncs.io/feelthatway</a><br>Watch: <a href="http://ncs.lnk.to/feelthatwayAT/youtube" target="_blank">http://ncs.lnk.to/feelthatwayAT/youtube</a>\
     </h>'
   },
   {
@@ -56,25 +57,25 @@ var FILES = [
             name: 'House',
             files: [
               {
+                id: 12,
+                type: 'afs',
+                name: 'Find_My_Way_Home.mp3',
+                ifurl: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A459572580&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
+                img_url: 'https://i1.sndcdn.com/artworks-000379593510-i5bail-t1080x1080.jpg'
+              },
+              {
+                id: 9,
+                type: 'af',
+                name: 'Bad_Girl.mp3',
+                audio_url: 'https://ncs.io/track/download/bb50d4b8-501b-4515-b495-294da2767cad?_gl=1*17cc72*_up*MQ..*_ga*MjI2MzU0MDQxLjE3NzEzNTkxNDM.*_ga_PFS54FR7NV*czE3NzEzNTkxNDIkbzEkZzAkdDE3NzEzNTkxNTgkajQ0JGwwJGgw',
+                img_url: 'https://linkstorage.linkfire.com/medialinks/images/e1bc4ec5-fbd9-4f1c-b6aa-67c656cfd529/artwork-440x440.jpg'
+              },
+              {
                 id: 8,
                 type: 'af',
                 name: 'Make_Me_Feel.mp3',
                 audio_url: 'https://ncs.io/track/download/0182147b-ef4e-4ee2-8aa5-5d4c12d56d3c?_gl=1*1x0ktwp*_up*MQ..*_ga*MTQ3Njg4MDMzOS4xNzcwODYxODQ0*_ga_PFS54FR7NV*czE3NzA4NjE4NDMkbzEkZzAkdDE3NzA4NjE4NDMkajYwJGwwJGgw',
                 img_url: 'https://linkstorage.linkfire.com/medialinks/images/7cab78f6-2a5e-4ec2-9253-c84917dd3d7f/artwork-440x440.jpg'
-              },
-              {
-                id: 9,
-                type: 'af',
-                name: 'Let\'s_Go.mp3',
-                audio_url: 'https://ncs.io/track/download/bb4ab1b2-8557-440d-a310-b57e5a2834e1?_gl=1*1vsjipy*_up*MQ..*_ga*MTcwODM3OTkzMC4xNzcwOTE1ODAw*_ga_PFS54FR7NV*czE3NzA5MTU3OTkkbzEkZzAkdDE3NzA5MTU4NTUkajQkbDAkaDA.',
-                img_url: 'https://linkstorage.linkfire.com/medialinks/images/63a7d06a-6ed1-4496-8056-58f393573376/artwork-440x440.jpg'
-              },
-              {
-                id: 10,
-                type: 'af',
-                name: 'Feel_That.mp3',
-                audio_url: 'https://ncs.io/track/download/f9f621eb-7dcf-4e07-8bbc-2962f2a1206b?_gl=1*nm12lv*_up*MQ..*_ga*MTI5MjEwMzMwNS4xNzcwOTE2MTY0*_ga_PFS54FR7NV*czE3NzA5MTYxNjMkbzEkZzAkdDE3NzA5MTY0OTQkajYwJGwwJGgw',
-                img_url: 'https://linkstorage.linkfire.com/medialinks/images/f3e35b36-6298-4caf-a3c9-a1c369f6ad5f/artwork-440x440.jpg'
               },
               {
                 id: 11,
@@ -98,16 +99,18 @@ var FILES = [
 ]
 
 // grab DOM elements, initialize files
-var container, desktop, dwindow, dwindow_bar, dwindow_close, crt_img, folder_container, tf_window, if_window, f_window, af_window
+var container, desktop, dwindow, dwindow_bar, dwindow_close, crt_img, folder_container, template_windows
 function init_window_manager() {
   container = document.getElementById("container");
   desktop = document.getElementById("desktop");
   crt_img = document.getElementById("crt-img");
   folder_container = document.getElementById("folder-container");
-  tf_window = document.getElementById("tf-window");
-  if_window = document.getElementById("if-window");
-  f_window = document.getElementById("f-window");
-  af_window = document.getElementById("af-window");
+  template_windows = {}
+  template_windows.tf = document.getElementById("tf-window");
+  template_windows.if = document.getElementById("if-window");
+  template_windows.f = document.getElementById("f-window");
+  template_windows.af = document.getElementById("af-window");
+  template_windows.afs = document.getElementById("afs-window");
   FILES.forEach((file) => add_file(file, folder_container))
   // open welcome
   file_click(2, 'tf')
@@ -116,30 +119,11 @@ function init_window_manager() {
 // add ghost divs for file icon and window
 function add_file(file, icon_container) {
   var type = file.type;
-  var full_type, template_window;
-  switch (type) {
-    case 'tf':
-      full_type = 'text';
-      template_window = tf_window;
-      break;
-    case 'if':
-      full_type = 'image';
-      template_window = if_window;
-      break;
-    case 'f':
-      full_type = 'folder';
-      template_window = f_window;
-      break;
-    case 'af':
-      full_type = 'audio'
-      template_window = af_window;
-      break;
-    case 'exe':
-      full_type = 'executable'
-      template_window = document.getElementById(`exe${file.id}-window`)
-      break;
-    default:
-      return;
+  var template_window;
+  if (type == 'exe') {
+    template_window = document.getElementById(`exe${file.id}-window`)
+  } else {
+    template_window = template_windows[type]
   }
 
   // create icon
@@ -151,14 +135,17 @@ function add_file(file, icon_container) {
   img.dataset.type = type;
   switch (type) {
     case 'tf':
+      img.src = 'assets/text.png';
+      break;
     case 'f':
-      img.src = `assets/${full_type}.png`;
+      img.src = 'assets/folder.png';
       break;
     case 'exe':
     case 'if':
       img.src = `assets/${file.filename}`;
       break;
     case 'af':
+    case 'afs':
       img.src = file.img_url;
       break;
     default:
@@ -199,6 +186,9 @@ function add_file(file, icon_container) {
       body.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.dataset.id = file.id;
       body.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.dataset.id = file.id;
       break;
+    case 'afs':
+      window.dataset.ifurl = file.ifurl
+      break;
     default:
       break;
   }
@@ -223,6 +213,7 @@ function delete_window(e, id=null) {
 }
 
 // bring window to front on click
+var maxZ = 1
 function bring_to_front(e) {
   // make sure not to screw up clicks on otherwise
   //  clickable stuff, since otherwise this will
@@ -236,12 +227,7 @@ function bring_to_front(e) {
     while (!f_window.classList.contains("d-window")) {
       f_window = f_window.parentElement;
     }
-    // preserve scroll amt
-    var scroller = f_window.querySelector(".scroller");
-    var scroll = scroller.scrollTop;
-    // move window to front
-    desktop.appendChild(f_window);
-    scroller.scrollTop = scroll;
+    f_window.style.zIndex = maxZ++
   }
 }
 
@@ -254,12 +240,7 @@ function start_move_window_mouse(event) {
   var f_window = event.target.parentElement;
   if (!f_window.classList.contains("window")) { return; }
 
-  // preserve scroll amt
-  var scroller = f_window.querySelector(".scroller");
-  var scroll = scroller.scrollTop;
-  // move window to front
-  desktop.appendChild(f_window);
-  scroller.scrollTop = scroll;
+  f_window.style.zIndex = maxZ++
 
   // grab initial state
   var style = getComputedStyle(f_window);
@@ -489,6 +470,7 @@ function new_elem_setup(element) {
 
 // finish new window setup
 function fully_loaded(element) {
+  element.style.zIndex = maxZ++
   var isAudio = element.classList.contains("af-window");
   // setup audio if applicable
   if (isAudio) {
@@ -524,6 +506,7 @@ function fully_loaded(element) {
     element.style.opacity = 1;
     element.style.position = "absolute";
     element.style.display = "";
+    if (element.classList.contains("afs-window")) {element.firstElementChild.nextElementSibling.firstElementChild.src = element.dataset.ifurl}
   }
   // pull window to front on click
   element.addEventListener("mousedown", (e) => { bring_to_front(e); });
@@ -960,7 +943,7 @@ open <path/to/file> : open a directory or file\n'
       } else if (s.length >= 2) {
         var path = s.at(-1).split('/')
         var pref = path.at(-1).toLowerCase()
-        var rem = path.slice(0, -1).join('/')
+        var rem = (s.at(-1)[0] == '/' ? '/' : '') + path.slice(0, -1).filter(Boolean).join('/')
         var wd = focused_term.dataset.wd
         if (wd != '/') {wd += '/'}
         var p
@@ -981,7 +964,7 @@ open <path/to/file> : open a directory or file\n'
         }
         if (brk) {break}
         if (name) {
-          focused_term.value = '> ' + input.substring(0, input.lastIndexOf(' ')) + ' ' + rem + (rem != '' ? '/' : '') + name
+          focused_term.value = '> ' + input.substring(0, input.lastIndexOf(' ')) + ' ' + rem + (rem != '' && rem != '/' ? '/' : '') + name
         }
       }
       break

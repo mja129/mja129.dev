@@ -28,170 +28,6 @@ body {
     border-bottom: 30px solid silver;
 }
 
-#login {
-    position: absolute;
-    width: min(500px, 90%);
-}
-
-#login-body {
-    position: static;
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-#login-mascot {
-    height: 100px;
-    width: 100px;
-}
-
-#login-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#login-error {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: red;
-    margin-top: 10px;
-}
-
-#login-input-container {
-    flex: 3;
-}
-
-#login-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-}
-
-#loading {
-    width: 100%;
-    height: 100%;
-    background-image: url("/static/img/sky.jpg");
-    border-radius: 20px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation-fill-mode: forwards;
-}
-
-#loading_overlay {
-    width: min(60vw, 80vh);
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-.fadein {
-    animation: fadeIn 5s ease-in-out;
-}
-
-.fadeout {
-    animation: fadeOut 0.5s ease-in;
-}
-
-@font-face {
-    font-family: bios_font;
-    src: url(/static/fonts/BIOS.ttf);
-}
-
-#bios {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    background-color: var(--dark-black);
-    font-family: bios_font;
-    color: var(--white);
-    font-size: 1.2rem;
-    animation: fadeIn 7s linear;
-}
-
-@media only screen and (width < 800px) {
-    #bios-img {
-        width: min(50vw, 50vh);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: .2;
-    }
-}
-
-@media only screen and (width >= 800px) {
-    #bios-img {
-        width: min(60vw, 60vh);
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 1;
-    }
-}
-
-#bios-container {
-    display: flex;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    align-items: stretch;
-    padding: 10px;
-}
-
-#bios-left {
-    width: fit-content;
-}
-
-@media only screen and ((height < 600px) or (width < 900px)) {
-    #bios-text *, #bios-footer {
-        font-size: 1rem;
-    }
-}
-
-@media only screen and ((height < 550px) or (width < 600px)) {
-    #bios-text *, #bios-footer {
-        font-size: .7rem;
-    }
-}
-
-#bios-footer {
-    height: fit-content;
-    position: absolute;
-    bottom: 0px;
-}
-
-#bios-img-container {
-    flex: 1;
-}
-
 #taskbar {
     height: 20px;
     width: 100%;
@@ -435,7 +271,7 @@ body {
     right: 0;
     background: rgba(18, 16, 16, 0.1);
     opacity: 0;
-    z-index: 2;
+    z-index: 10000;
     pointer-events: none;
     animation: flicker 0.15s infinite;
     border-radius: 20px;
@@ -458,7 +294,7 @@ body {
             rgba(0, 255, 0, 0.02),
             rgba(0, 0, 255, 0.06)
         );
-    z-index: 2;
+    z-index: 10000;
     background-size:
         100% 2px,
         3px 100%;
@@ -472,17 +308,11 @@ body {
     height: calc(100% + 30px);
 }
 
-/* ----------------- DESKTOP STYLES ----------------- */
-
 #desktop * {
    -moz-user-select: -moz-none;
    -khtml-user-select: none;
    -webkit-user-select: none;
-
-   /*
-     Introduced in IE 10.
-     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
-   */
+   
    -ms-user-select: none;
    user-select: none;
 }
