@@ -1,49 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width">
-     <title>Segfault Squadron</title>
-     <link rel="stylesheet" href="styles.css">
-     <script src="matter.min.js"></script>
-     <script src="script.js"></script>
-</head>
-<body onload="init()">
-     <span class="headER">
-          <div class="head">
-               <p>
-                    <div class="txt">⇨ Matthew Anderson</div>
-                    <br>
-                    <div class="txt">⇨ 
-                         <a id="email" href="mailto:mja129@pitt.edu">mja129@pitt.edu</a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <link rel="stylesheet" href="https://unpkg.com/98.css" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+        <title>Matthew Anderson</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=VT323&display=swap" rel="stylesheet">
+    </head>
+    <body onload="init_window_manager();">
+        <div id="container" class="crt center dt">
+            <div id="desktop">
+                <div id="folder-container"></div>
+                <div id="taskbar" class="window">
+                    <div id="taskbar-shadow"></div>
+                    <button onmousedown="crt_down()" id="crt-btn" class="taskbar-btn">
+                        <img id="crt-img" class="taskbar-img" src="assets/crt.png"/>
+                        <b class="taskbar-txt">Toggle CRT</b>
+                    </button>
+                    <a href="https://www.linkedin.com/in/matthew-anderson-249080235" target="_blank">
+                        <button onmousedown="taskbar_down()" class="taskbar-btn">
+                            <img class="taskbar-img" src="assets/linkedin.png"/>
+                            <b class="taskbar-txt">LinkedIn</b>
+                        </button>
+                    </a>
+                    <a href="https://www.instagram.com/matthews.shleep/" target="_blank">
+                        <button onmousedown="taskbar_down()" class="taskbar-btn">
+                            <img class="taskbar-img" src="assets/instagram.png"/>
+                            <b class="taskbar-txt">Instagram</b>
+                        </button>
+                    </a>
+                </div>
+                <div id="tf-window" class="d-window tf-window window" style="display: none; opacity: 0; position: fixed;">
+                    <div id="tf-window-bar" class="f-title title-bar">
+                        <div class="title-bar-text unselectable"></div>
+                        <div class="title-bar-controls">
+                            <button id="tf-close" class="f-close" aria-label="Close"></button>
+                        </div>
                     </div>
-               </p>
-          </div>
-          <div class="img" id="gif">
-               <img src="./gif.gif" alt="" onclick="cloneGif()">
-          </div>
-     </span>
-     <div class="body" id="banner">
-          <div class="hbg">
-               <a id="recslides" href="1550.html">
-                    <span class="title">Recitation Slides</span>
-               </a>
-          </div>
-          <div class="other">
-               <a href="https://drive.google.com/drive/folders/1H6EV2xh0Uy2pjzBCwB261mMWaBN4_ImF?usp=drive_link" target="_blank" rel="noopener">
-                    <span class="slidesmirror">
-                         Recitation Slides Mirror<br>
-                         (mobile friendly, much less cool)</span>
-               </a>
-          </div>
-          <div class="other" id="spawner" onmouseover="spawn()" onmouseout="kill()" onclick="trap()">
-               <span class="slidesmirror">
-                    Office Hours:<br>
-                    TuTh 1pm-5pm, Fr 10am-12:00pm/3pm-5pm<br>
-                    6508 Sennott Square
-               </span>
-          </div>
-     </div>
-</body>
+                    <div class="window-body scroller" style="font-size: 20px;"></div>
+                </div>
+                </div>
+                <div id="if-window" class="d-window if-window window" style="display: none; opacity: 0; position: fixed;">
+                    <div id="if-window-bar" class="f-title title-bar">
+                         <div class="title-bar-text unselectable"></div>
+                         <div class="title-bar-controls">
+                              <button id="if-close" class="f-close" aria-label="Close"></button>
+                         </div>
+                    </div>
+                    <div class="window-body scroller">
+                        <img class="if-img-body"/>
+                        <div class="img-caption status-bar">
+                            <p class="status-bar-field"></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="f-window" class="d-window f-window window" style="display: none; opacity: 0; position: fixed;">
+                    <div id="f-window-bar" class="f-title title-bar">
+                        <div class="title-bar-text unselectable"></div>
+                        <div class="title-bar-controls">
+                            <button id="f-close" class="f-close" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body scroller">
+                        <div id="window-container"></div>
+                    </div>
+                </div>
+                <div data-url="" id="af-window" class="d-window af-window window" style="display: none; opacity: 0; position: fixed;">
+                    <div id="af-window-bar" class="f-title title-bar">
+                        <div class="title-bar-text unselectable"></div>
+                        <div class="title-bar-controls">
+                            <button id="af-close" class="f-close" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body scroller">
+                        <img class="af-img-body" src=""/>
+                        <img class="loading-gif" src="assets/load.gif"/>
+                        <div class="progress-indicator" style="height: 20px; margin: 8px; display: none;">
+                            <span class="progress-indicator-bar" style="width: 0%;"/>
+                        </div>
+                        <div class="af-controls" style="display: none;">
+                            <button class="af-control">
+                                <img class="control-img" src="assets/play.png"/>
+                            </button>
+                            <div class="volume-control field-row" style="width: 50px">
+                              <input id="range23" type="range" min="1" max="11" value="5" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="exe0-window" class="d-window exe-window window" style="display: none; opacity: 0; position: fixed;">
+                    <div id="exe0-window-bar" class="f-title title-bar">
+                        <div class="title-bar-text unselectable"></div>
+                        <div class="title-bar-controls">
+                            <button id="exe0-close" class="f-close" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body scroller">
+                        <div style="height: 300px; width: 300px; filter: contrast(250%) brightness(800%); background: linear-gradient(118deg, rgb(102, 0, 170), rgba(0, 164, 11, 0.807)), url(assets/noise.svg);">
+                            <div id="sbcontainer" style="display: flex; flex-direction: row; width: 260px; height: 260px; padding: 20px; flex-wrap: wrap; gap: 20px; justify-content: space-around; align-items: center; align-content: space-around;">
+                                <audio id="a0">
+                                    <source src="assets/error.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a0'); a.currentTime = .15; a.play();">
+                                <audio id="a1">
+                                    <source src="assets/slack.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a1'); a.currentTime = .28; a.play();">
+                                <audio id="a2">
+                                    <source src="assets/explosion.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a2'); a.currentTime = 0.9; a.volume = 0.5; a.play();">
+                                <audio id="a3">
+                                    <source src="assets/alert.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a3'); a.currentTime = .15; a.play();">
+                                <audio id="a4">
+                                    <source src="assets/vineboom.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a4'); a.currentTime = 0; a.play();">
+                                <audio id="a5">
+                                    <source src="assets/vineboom.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a5'); a.currentTime = 0; a.play();">
+                                <audio id="a6">
+                                    <source src="assets/vineboom.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a6'); a.currentTime = 0; a.play();">
+                                <audio id="a7">
+                                    <source src="assets/vineboom.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a7'); a.currentTime = 0; a.play();">
+                                <audio id="a8">
+                                    <source src="assets/vineboom.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a8'); a.currentTime = 0; a.play();">
+                                <audio id="a9">
+                                    <source src="assets/victory.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a9'); a.currentTime = .3; a.play();">
+                                <audio id="a10">
+                                    <source src="assets/vineboom.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a10'); a.currentTime = .25; a.play();">
+                                <audio id="a11">
+                                    <source src="assets/FAAHHHHHH.mp3" type="audio/mp3">
+                                </audio>
+                                <img src="assets/sb-btn.png" style="cursor: pointer; height: 48px;" onclick="var a = document.getElementById('a11'); a.currentTime = .07; a.play(); FAH();">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="exe1-window" class="d-window exe-window window" style="display: none; opacity: 0; position: fixed;">
+                    <div id="exe1-window-bar" class="f-title title-bar">
+                        <div class="title-bar-text unselectable"></div>
+                        <div class="title-bar-controls">
+                            <button id="exe1-close" class="f-close" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body scroller">
+                        <div style="height: 350px; width: 350px; background: #222; overflow: hidden; position: relative;">
+                            <textarea data-wd="/" onkeydown="term_input(event)" onfocus="term_focus_in(event)" id="input" class="term-font" style="height: 300px; width: 96%; background: none; color: white; resize: none; overflow: hidden; position: absolute; top: 50px; left: 0; box-shadow: none; line-height: 25px; padding: 0; margin: 0 2%;">&gt;&nbsp;</textarea>
+                            <textarea id="display" readonly="true" class="term-font" style="width: 96%; background: none; color: white; resize: none; overflow: hidden; position: absolute; top: 0; left: 0; pointer-events: none; box-shadow: none; line-height: 25px; padding: 0; margin: 0 2%;">Welcome to my site's (sparsely featured) Unix-like terminal! Try 'help' :-)&#13;&#10;</textarea>
+                        </div>
+                    </div>
+                </div>
+                <img id="FAAHHHHHHH" src="assets/FAAHHHHHH.jpg" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; opacity: 0; pointer-events: none;">
+            </div>
+        </div>
+    </body>
 </html>
