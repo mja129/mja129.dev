@@ -14,7 +14,7 @@ var FILES = [
     id: 2,
     type: 'tf',
     name: 'Welcome.txt',
-    content: '<h style="font-size:40px;">Matthew Anderson</h><br>Welcome to my portfolio!<br><h style="font-size:15px">A little desktop hand built in pure HTML, JS and CSS!<br><a href="https://github.com/mja129/mja129.dev" target="_blank">Check out the source here</a></h><br><br>Not much of a portfolio yet... WIP lol'
+    content: '<h style="font-size:40px;">Matthew Anderson</h><br>Welcome to my portfolio!<br><h style="font-size:15px">A little hand-built desktop.<br><a href="https://github.com/mja129/mja129.dev" target="_blank">Check out the source here</a><br>This is a WIP and being actively updated. Not everything\'s here yet but please, surf around!<br><br></h><h style="font-size:18px">You can take a look at my resume, or leaf through the folders for more in-depth details of my life (academic and otherwise!)</h>'
   },
   {
     id: 3,
@@ -33,6 +33,112 @@ var FILES = [
     type: 'pdf',
     name: 'Resume.pdf',
     filename: 'manderson-resume.pdf'
+  },
+  {
+    id: 14,
+    type: 'f',
+    name: 'WorkExperience',
+    files: [
+      {
+        id: 16,
+        type: 'tf',
+        name: 'UTA.txt',
+        content: '\
+        Undergraduate Teaching Assistant<br>January 2024 - Present<br>University of Pittsburgh<br>\
+        <h style="font-size: 16px">\
+        Being a TA has been by far the most enriching experience of my academic life.<br>\
+        I\'ve been holding office hours and teaching recitations for Intro to Operating Systems (CS1550) for four semesters now, in addition to TAing for Computer Organization and Assembly Language (CS0447) for one.<br>\
+        I\'ve consistently held ~12 hours of office hours per week, and held 2 hours of instruction per week.<br>\
+        In Intro to OS, I recieved consistent positive feedback, including the following testimonial on an anonymous feedback form sent out to students:<br><br>\
+        "Matthew was just really willing to help and did a good job of not making me feel dumb. He also was willing to actually help with specific problems rather than just offering general feedback that was hard to apply to my own code."<br><br>\
+        Both my recitations and office hours drew consistently solid attendance, which I promise, in computer science at Pitt, is a feat worth putting in here.<br><br>\
+        Through instruction I\'ve become proficient in:\
+        <ul style="margin: 0; padding-left: 20px;">\
+        <li>All things virtual memory - addressing/address translation, paging/page tables</li>\
+        <li>Modification of Linux kernels, most notably addition of system calls</li>\
+        <li>Unix and Unix accessories - Unix terminals, bash (my love), C (also my love), and scripting in general</li>\
+        <li>Building and simulating processors using <a href="https://www.cburch.com/logisim/" target="_blank">Logisim</a></li>\
+        </ul><br>\
+        P.S:<br>\
+        My absolute favorite project I taught in 1550 was one that involved creation of a graphics library by directly editing the framebuffer, exposed as a file in the Linux distro we used. I adored it because (A) it was low-level and taught systems thinking and (B) it allowed people to be extremely creative when making their demo for it. In the Materials folder there\'s a gif of a isometric 3D version of Conway\'s Game of Life that I made to show people what\'s possible that I think is super cool.\
+        </h>'
+      },
+      {
+        id: 18,
+        type: 'tf',
+        name: 'DataAnalyst.txt',
+        content: '\
+        Data Analyst & Integrations Engineer<br>June 2024 - Present<br>Quantum<sup>5</sup><br>\
+        <h style="font-size: 16px">\
+        At Quantum<sup>5</sup>, I have two main roles:<br>\
+        First and foremost, I\'m a data analyst. I largely use <a href="https://www.knowi.com/" target="_blank">Knowi</a> to power dashboards that provide insights on employee training.<br>\
+        These dashboards run off queries that pull data from multiple sources (mostly Postgres and Mongo) and combine them in complex and cool ways.<br>\
+        In this role, I\'ve learned a lot about data manipulation, both traditional and more complex, functional SQL, and much more.<br><br>\
+        I also do work as an integrations engineer. I write services that leverage webhooks, web scrapers, and the like to pull data from third party services and post it to our databases.<br>\
+        These "middlemen", if you will, leverage a plethora of technologies/paradigms/whatever. They\'re mostly written in Python, some Flask for routing, Selenium for web scraping, lots of tooling with OAuth flows, and Redis, to name a few.\
+        </h>'
+      },
+      {
+        id: 17,
+        type: 'f',
+        name: 'Materials',
+        files: [
+          {
+            id: 19,
+            type: 'if',
+            name: 'Conway.gif',
+            caption: 'An isometric 3D version of Conway\'s Game of Life, made in the graphics library I helped students build in CS1550. Wait until the end for a pretty cool (and super efficient, if I may flex) feature that renders a trail as descending layers. You can also rotate the view! VERY MESSY source code <a href="https://gist.github.com/mja129/b1beb242814a61e05b8153a1ddb8a185" target="_blank">here</a> if you\'re interested.',
+            filename: 'conway.gif'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 15,
+    type: 'f',
+    name: 'Projects',
+    files: [
+      {
+        id: 20,
+        type: 'tf',
+        name: 'LogiCap.txt',
+        content: '\
+        <a href="https://github.com/mja129/LogiCap" target="_blank">LogiCap</a><br>\
+        <h style="font-size: 16px">\
+        LogiCap is a capstone project at Pitt I\'ve had a hand in developing for two semesters running.<br>\
+        It\'s a web application meant as a teaching tool for building circuits.<br>\
+        Me and my group members inherited the codebase from a previous group, and it was a very tedious learning experience to the end of jumping into a completely foreign codebase.<br>\
+        The app is built in Svelte, which I\'m now proficient in, and continued development is mostly in Typescript.<br>\
+        Some of my contributions to the project include:\
+        <ul style="margin: 0; padding-left: 20px;">\
+        <li>Subcomponents (a huge task, and my biggest contribution) via the tab system</li>\
+        <li>Various built-in circuit components</li>\
+        <li>Wiring tunnels, integral to keeping circuits neat</li>\
+        <li>Large overhauls to the backend systems that interface with the circuit simulator</li>\
+        </ul>\
+        </h>'
+      },
+      {
+        id: 21,
+        type: 'tf',
+        name: 'Portfolio.txt',
+        content: '\
+        This site!<br>\
+        <h style="font-size: 16px">\
+        The site you\'re looking at now (<a href="https://github.com/mja129/mja129.dev" target="_blank">source</a>) is my personal magnum opus... of Javascript and sheer willpower.<br>\
+        Some stuff I\'m proud of that you should check out (if you want, I\'m not your boss):\
+        <ul style="margin: 0; padding-left: 20px;">\
+        <li>On mobile, multiple tabs can be dragged around at the same time</li>\
+        <li>The audio players (mine, not the Soundcloud embeds, they\'re smart) can have as many independent, playing copies as you\'d like. This gets overstimulating very fast, but I think it\'s funny</li>\
+        <li>It\'s ✨RESPONSIVE✨. Try and break this thing, I dare you</li>\
+        <li>I think the terminal is pretty cool. Pretty useless, but... some of the coolest things are!</li>\
+        </ul>\
+        I quite hope you enjoy!<br>\
+        My personal favorite pastime on here is spinning up some music and playing the soundboard to the rhythm. But maybe I just have too much time on my hands.\
+        </h>'
+      }
+    ]
   },
   {
     id: 4,
@@ -65,28 +171,28 @@ var FILES = [
               {
                 id: 12,
                 type: 'afs',
-                name: 'Find_My_Way_Home.mp3',
+                name: 'FindMyWayHome.mp3',
                 ifurl: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A459572580&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
                 img_url: 'https://i1.sndcdn.com/artworks-000379593510-i5bail-t1080x1080.jpg'
               },
               {
                 id: 9,
                 type: 'af',
-                name: 'Bad_Girl.mp3',
+                name: 'BadGirl.mp3',
                 audio_url: 'https://ncs.io/track/download/bb50d4b8-501b-4515-b495-294da2767cad?_gl=1*17cc72*_up*MQ..*_ga*MjI2MzU0MDQxLjE3NzEzNTkxNDM.*_ga_PFS54FR7NV*czE3NzEzNTkxNDIkbzEkZzAkdDE3NzEzNTkxNTgkajQ0JGwwJGgw',
                 img_url: 'https://linkstorage.linkfire.com/medialinks/images/e1bc4ec5-fbd9-4f1c-b6aa-67c656cfd529/artwork-440x440.jpg'
               },
               {
                 id: 8,
                 type: 'af',
-                name: 'Make_Me_Feel.mp3',
+                name: 'MakeMeFeel.mp3',
                 audio_url: 'https://ncs.io/track/download/0182147b-ef4e-4ee2-8aa5-5d4c12d56d3c?_gl=1*1x0ktwp*_up*MQ..*_ga*MTQ3Njg4MDMzOS4xNzcwODYxODQ0*_ga_PFS54FR7NV*czE3NzA4NjE4NDMkbzEkZzAkdDE3NzA4NjE4NDMkajYwJGwwJGgw',
                 img_url: 'https://linkstorage.linkfire.com/medialinks/images/7cab78f6-2a5e-4ec2-9253-c84917dd3d7f/artwork-440x440.jpg'
               },
               {
                 id: 11,
                 type: 'af',
-                name: 'Never_Give_Up_On_Loving_You.mp3',
+                name: 'NeverGiveUpOnLovingYou.mp3',
                 audio_url: 'https://ncs.io/track/download/a6fc48cd-f33e-476f-b3f6-88ae77c9aa2f?_gl=1*1r8hj4x*_up*MQ..*_ga*MTI5MjEwMzMwNS4xNzcwOTE2MTY0*_ga_PFS54FR7NV*czE3NzA5MTYxNjMkbzEkZzAkdDE3NzA5MTY3MDEkajYwJGwwJGgw',
                 img_url: 'https://linkstorage.linkfire.com/medialinks/images/6d26c85f-97b0-400c-b9b1-b875690eccbc/artwork-440x440.jpg'
               }
@@ -118,7 +224,7 @@ function init_window_manager() {
   template_windows.af = document.getElementById("af-window");
   template_windows.afs = document.getElementById("afs-window");
   FILES.forEach((file) => add_file(file, folder_container))
-  // open welcome
+  // open Welcome.txt
   file_click(2, 'tf')
 }
 
@@ -175,6 +281,7 @@ function add_file(file, icon_container) {
   icon_container.appendChild(div);
   
   if (type == 'pdf') {return}
+
   const window = template_window.cloneNode(true);
   window.firstElementChild.firstElementChild.innerHTML = file.name;
   // do stuff based on filetype :P
@@ -329,12 +436,7 @@ function start_move_window_touch(event) {
       tracked_touches_w.pop();
       continue;
     }
-    // preserve scroll amt
-    var scroller = f_window.querySelector(".scroller");
-    var scroll = scroller.scrollTop;
-    // move window to front
-    desktop.appendChild(f_window);
-    scroller.scrollTop = scroll;
+    f_window.style.zIndex = maxZ++
     touch_window_w.push(f_window);
     var style = getComputedStyle(f_window);
 
@@ -555,8 +657,13 @@ function fully_loaded(element) {
 
 // when a file is clicked...
 function file_click(id, prefix) {
-  // copy the invisible reference window, pass it to setup func
-  new_elem_setup(document.getElementById(`${prefix}${id}-window`).cloneNode(true));
+  // copy the invisible reference window, pass it to setup func.
+  // special case for when a pdf is opened via the terminal
+  if (prefix == 'pdf') {
+    document.querySelector(`[data-id="${id}"]`).parentElement.click()
+  } else {
+    new_elem_setup(document.getElementById(`${prefix}${id}-window`).cloneNode(true));
+  }
 }
 
 // Dispatchers for whatever listeners could be piled together without breaking everything
