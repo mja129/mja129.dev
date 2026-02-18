@@ -403,7 +403,7 @@ body {
     row-gap: 10px;
 }
 
-.if-window > .window-body, .af-window > .window-body {
+.if-window > .window-body, .af-window > .window-body, .vf-window > .window-body {
     display: flex;
     flex-direction: column;
     align-content: center;

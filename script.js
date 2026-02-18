@@ -14,7 +14,8 @@ var FILES = [
     id: 2,
     type: 'tf',
     name: 'Welcome.txt',
-    content: '<h style="font-size:40px;">Matthew Anderson</h><br>Welcome to my portfolio!<br><h style="font-size:15px">A little hand-built desktop.<br><a href="https://github.com/mja129/mja129.dev" target="_blank">Check out the source here</a><br>This is a WIP and being actively updated. Not everything\'s here yet but please, surf around!<br><br></h><h style="font-size:18px">You can take a look at my resume, or leaf through the folders for more in-depth details of my life (academic and otherwise!)</h>'
+    content: '<h style="font-size:40px;">Matthew Anderson</h><br>Welcome to my portfolio!<br><h style="font-size:15px">A little hand-built desktop.<br><a href="https://github.com/mja129/mja129.dev" target="_blank">Check out the source here</a><br>This is a WIP and being actively updated. Not everything\'s here yet but please, surf around!<br><br></h><h style="font-size:18px">You can take a look at my resume, or leaf through the folders for more in-depth details of my life (academic and otherwise!)</h><br>\
+    <h style="font-size:15px">I\'m first and foremost a systems thinker, but also a dancer (check out my Instagram on the taskbar), avid music enjoyer, and racing jacket enthusiast.</h>'
   },
   {
     id: 3,
@@ -60,7 +61,7 @@ var FILES = [
         <li>Building and simulating processors using <a href="https://www.cburch.com/logisim/" target="_blank">Logisim</a></li>\
         </ul><br>\
         P.S:<br>\
-        My absolute favorite project I taught in 1550 was one that involved creation of a graphics library by directly editing the framebuffer, exposed as a file in the Linux distro we used. I adored it because (A) it was low-level and taught systems thinking and (B) it allowed people to be extremely creative when making their demo for it. In the Materials folder there\'s a gif of a isometric 3D version of Conway\'s Game of Life that I made to show people what\'s possible that I think is super cool.\
+        My absolute favorite project I taught in 1550 was one that involved creation of a graphics library by directly editing the framebuffer, exposed as a file in the Linux distro we used. I adored it because (A) it was low-level and taught systems thinking and (B) it allowed people to be extremely creative when making their demo for it. In the Materials folder there\'s a video of a isometric 3D version of Conway\'s Game of Life that I made to show people what\'s possible that I think is super cool.\
         </h>'
       },
       {
@@ -79,16 +80,37 @@ var FILES = [
         </h>'
       },
       {
+        id: 22,
+        type: 'tf',
+        name: 'WebDev.txt',
+        content: '\
+        <h style="font-size: 16px">\
+        I worked on both of these sites under <a href="https://peckedbybirds.com/" target="_blank">PeckedByBirds</a>, a two-person web development company I\'m half of. Check it out!</h><br><br>\
+        Full Stack Web Developer<br>October 2025<br>UPMC Hand Therapy Conference<br>\
+        <h style="font-size: 16px">\
+        A web app (<a href="https://handtherapy.peckedbybirds.com/" target="_blank">here</a>) built for the 9th Annual Pittsburgh Hand Therapy Conference in a whopping one week!<br>\
+        Unfortunately, much of it is password protected, but you can see the landing page at least. We built a full-service application for uploading, hosting, and distribution of materials for the conference.\
+        </h><br><br>\
+        Frontend Web Developer<br>March 2024 - August 2024<br>Surreality Lab @ Pitt<br>\
+        <h style="font-size: 16px">\
+        Ground-up rebuild of the frontend of the <a href="https://surreality.pitt.edu" target="_blank">Surreality Lab @ Pitt\'s website</a>.<br>\
+        Built mostly by hand, with a little help from <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> and <a href="https://alpinejs.dev/" target="_blank">Alpine.js</a> (my favorite frontend JS library by FAR).<br>\
+        The landing page of this site is some of my favorite frontend work I\'ve ever done. Take a look at it on a desktop, the 3D animation at the top that follows the mouse is wicked fast (native html/JS/CSS) and, in my humble opinion, super cool.<br>\
+        The glare in the goggles (on supported browsers 😔) is actually a div embedded in the svg as a foreignObject that moves opposite the mouse. It\'s hacky, but I think the final product looks great.<br>\
+        Had to make it a much uglier linear gradient on browsers that struggle rendering HTML stuff within SVGs lol\
+        </h>'
+      },
+      {
         id: 17,
         type: 'f',
         name: 'Materials',
         files: [
           {
             id: 19,
-            type: 'if',
-            name: 'Conway.gif',
-            caption: 'An isometric 3D version of Conway\'s Game of Life, made in the graphics library I helped students build in CS1550. Wait until the end for a pretty cool (and super efficient, if I may flex) feature that renders a trail as descending layers. You can also rotate the view! VERY MESSY source code <a href="https://gist.github.com/mja129/b1beb242814a61e05b8153a1ddb8a185" target="_blank">here</a> if you\'re interested.',
-            filename: 'conway.gif'
+            type: 'vf',
+            name: 'Conway.mp4',
+            caption: 'An isometric 3D version of Conway\'s Game of Life, made in the graphics library I helped students build in Intro to OS. Wait until the end for a pretty cool (and super efficient, if I may flex) feature that renders a trail as descending layers. You can also rotate the view! VERY MESSY source code <a href="https://gist.github.com/mja129/b1beb242814a61e05b8153a1ddb8a185" target="_blank">here</a> if you\'re interested.',
+            filename: 'conway.mp4'
           }
         ]
       }
@@ -124,7 +146,7 @@ var FILES = [
         type: 'tf',
         name: 'Portfolio.txt',
         content: '\
-        This site!<br>\
+        My Portfolio Site<br>\
         <h style="font-size: 16px">\
         The site you\'re looking at now (<a href="https://github.com/mja129/mja129.dev" target="_blank">source</a>) is my personal magnum opus... of Javascript and sheer willpower.<br>\
         Some stuff I\'m proud of that you should check out (if you want, I\'m not your boss):\
@@ -218,11 +240,9 @@ function init_window_manager() {
   crt_img = document.getElementById("crt-img");
   folder_container = document.getElementById("folder-container");
   template_windows = {}
-  template_windows.tf = document.getElementById("tf-window");
-  template_windows.if = document.getElementById("if-window");
-  template_windows.f = document.getElementById("f-window");
-  template_windows.af = document.getElementById("af-window");
-  template_windows.afs = document.getElementById("afs-window");
+  for (var ft of ['tf', 'if', 'f', 'af', 'afs', 'vf']) {
+    template_windows[ft] = document.getElementById(`${ft}-window`)
+  }
   FILES.forEach((file) => add_file(file, folder_container))
   // open Welcome.txt
   file_click(2, 'tf')
@@ -270,6 +290,9 @@ function add_file(file, icon_container) {
     case 'afs':
       img.src = file.img_url;
       break;
+    case 'vf':
+      img.src = 'assets/video.png'
+      break
     default:
       return;
   }
@@ -296,6 +319,10 @@ function add_file(file, icon_container) {
       break;
     case 'if':
       window.firstElementChild.nextElementSibling.firstElementChild.src = `assets/${file.filename}`;
+      window.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.innerHTML = file.caption;
+      break;
+    case 'vf':
+      window.firstElementChild.nextElementSibling.firstElementChild.firstElementChild.src = `assets/${file.filename}`;
       window.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.innerHTML = file.caption;
       break;
     case 'f':
@@ -651,6 +678,7 @@ function fully_loaded(element) {
   element.firstElementChild.lastElementChild.firstElementChild.addEventListener("touchstart", callback);
 
   // add to desktop and check bounds
+  element.firstElementChild.nextElementSibling.style.scrollTop = 0
   desktop.appendChild(element);
   bound_window(element);
 }
