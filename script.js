@@ -29,6 +29,12 @@ var FILES = [
     </h>'
   },
   {
+    id: 13,
+    type: 'pdf',
+    name: 'Resume.pdf',
+    filename: 'manderson-resume.pdf'
+  },
+  {
     id: 4,
     type: 'if',
     name: 'Me.jpg',
@@ -120,16 +126,18 @@ function init_window_manager() {
 function add_file(file, icon_container) {
   var type = file.type;
   var template_window;
-  if (type == 'exe') {
-    template_window = document.getElementById(`exe${file.id}-window`)
-  } else {
-    template_window = template_windows[type]
+  if (type != 'pdf') {
+    if (type == 'exe') {
+      template_window = document.getElementById(`exe${file.id}-window`)
+    } else {
+      template_window = template_windows[type]
+    }
   }
 
   // create icon
-  const div = document.createElement('div');
+  var div = document.createElement('div');
   div.classList.add('file');
-  const img = document.createElement('img');
+  var img = document.createElement('img');
   img.classList.add('file-img');
   img.dataset.id = file.id;
   img.dataset.type = type;
@@ -140,6 +148,14 @@ function add_file(file, icon_container) {
     case 'f':
       img.src = 'assets/folder.png';
       break;
+    case 'pdf':
+      img.src = 'assets/pdf.png'
+      var a = document.createElement('a')
+      a.href = `assets/${file.filename}`
+      a.target = '_blank'
+      a.appendChild(img)
+      img = a
+      break
     case 'exe':
     case 'if':
       img.src = `assets/${file.filename}`;
@@ -158,6 +174,7 @@ function add_file(file, icon_container) {
   div.appendChild(p);
   icon_container.appendChild(div);
   
+  if (type == 'pdf') {return}
   const window = template_window.cloneNode(true);
   window.firstElementChild.firstElementChild.innerHTML = file.name;
   // do stuff based on filetype :P
@@ -544,7 +561,7 @@ function file_click(id, prefix) {
 
 // Dispatchers for whatever listeners could be piled together without breaking everything
 document.onclick = (e) => {
-  if (e.target.classList.contains('file-img')) {
+  if (e.target.classList.contains('file-img') && e.target.dataset.type != 'pdf') {
     file_click(e.target.dataset.id, e.target.dataset.type)
   }
 }

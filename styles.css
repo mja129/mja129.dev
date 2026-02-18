@@ -312,7 +312,7 @@ body {
    -moz-user-select: -moz-none;
    -khtml-user-select: none;
    -webkit-user-select: none;
-   
+
    -ms-user-select: none;
    user-select: none;
 }
@@ -341,7 +341,11 @@ body {
     font-family: "Pixelated MS Sans Serif",Arial;
 }
 
-.file > img {
+.file > a {
+    display: block;
+}
+
+.file > img, .file > a > img {
     width: 70px;
     position: relative;
     object-fit: cover;
