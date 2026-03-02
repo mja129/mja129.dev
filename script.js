@@ -14,7 +14,7 @@ var FILES = [
     id: 2,
     type: 'tf',
     name: 'Welcome.txt',
-    content: '<h style="font-size:40px;">Matthew Anderson</h><br>Welcome to my portfolio!<br><h style="font-size:15px">A little hand-built desktop.<br><a href="https://github.com/mja129/mja129.dev" target="_blank">Check out the source here</a><br>This is a WIP and being actively updated. Not everything\'s here yet but please, surf around!<br><br></h><h style="font-size:18px">You can take a look at my resume, or leaf through the folders for more in-depth details of my life (academic and otherwise!)</h><br>\
+    content: '<h style="font-size:40px;">Matthew Anderson</h><br>Welcome to my portfolio!<br><h style="font-size:15px">A little hand-built desktop.<br><a href="https://github.com/mja129/mja129.dev" target="_blank">Check out the source here</a><br>This is a WIP and being actively updated. Not everything\'s here yet but please, surf around!<br><br></h><h style="font-size:18px">You can take a look at my resume, or leaf through the folders for more in-depth details of my life, academic and otherwise!</h><br>\
     <h style="font-size:15px">I\'m first and foremost a systems thinker, but also a dancer (check out my Instagram on the taskbar), avid music enjoyer, and racing jacket enthusiast.</h>'
   },
   {
@@ -108,7 +108,7 @@ var FILES = [
           {
             id: 19,
             type: 'vf',
-            name: 'Conway.mp4',
+            name: 'Conway.gif',
             caption: 'An isometric 3D version of Conway\'s Game of Life, made in the graphics library I helped students build in Intro to OS. Wait until the end for a pretty cool (and super efficient, if I may flex) feature that renders a trail as descending layers. You can also rotate the view! VERY MESSY source code <a href="https://gist.github.com/mja129/b1beb242814a61e05b8153a1ddb8a185" target="_blank">here</a> if you\'re interested.',
             filename: 'conway.mp4'
           }
@@ -126,12 +126,13 @@ var FILES = [
         type: 'tf',
         name: 'LogiCap.txt',
         content: '\
-        <a href="https://github.com/mja129/LogiCap" target="_blank">LogiCap</a><br>\
+        <a href="https://mja129.github.io/LogiCap/" target="_blank">LogiCap</a><br>\
         <h style="font-size: 16px">\
+        <a href="https://github.com/mja129/LogiCap" target="_blank">Source</a><br>\
         LogiCap is a capstone project at Pitt I\'ve had a hand in developing for two semesters running.<br>\
         It\'s a web application meant as a teaching tool for building circuits.<br>\
         Me and my group members inherited the codebase from a previous group, and it was a very tedious learning experience to the end of jumping into a completely foreign codebase.<br>\
-        The app is built in Svelte, which I\'m now proficient in, and continued development is mostly in Typescript.<br>\
+        Continued development is almost entirely Svelte and Typescript, but has also required bits of graphic design and backend work.<br>\
         Some of my contributions to the project include:\
         <ul style="margin: 0; padding-left: 20px;">\
         <li>Subcomponents (a huge task, and my biggest contribution) via the tab system</li>\
@@ -154,7 +155,7 @@ var FILES = [
         <li>On mobile, multiple tabs can be dragged around at the same time</li>\
         <li>The audio players (mine, not the Soundcloud embeds, they\'re smart) can have as many independent, playing copies as you\'d like. This gets overstimulating very fast, but I think it\'s funny</li>\
         <li>It\'s ✨RESPONSIVE✨. Try and break this thing, I dare you</li>\
-        <li>I think the terminal is pretty cool. Pretty useless, but... some of the coolest things are!</li>\
+        <li>I think the terminal is pretty cool. Pretty useless, but... some of the coolest things are! And it has tab autocomplete :)</li>\
         </ul>\
         I quite hope you enjoy!<br>\
         My personal favorite pastime on here is spinning up some music and playing the soundboard to the rhythm. But maybe I just have too much time on my hands.\
@@ -186,6 +187,27 @@ var FILES = [
         name: 'Music',
         files: [
           {
+            id: 23,
+            type: 'f',
+            name: 'DanceFavorites',
+            files: [
+              {
+                id: 24,
+                type: 'afs',
+                name: 'DropReyrzyRmx.mp3',
+                ifurl: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A869045134&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
+                img_url: 'https://i1.sndcdn.com/artworks-NFAcCgnZXZVdvCnS-aZZcLw-t1080x1080.jpg'
+              },
+              {
+                id: 26,
+                type: 'afs',
+                name: 'SlowItDown.mp3',
+                ifurl: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1128332830&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
+                img_url: 'https://i1.sndcdn.com/artworks-z69EuPzBeYMlJkCs-bFtdbA-t1080x1080.jpg'
+              }
+            ]
+          },
+          {
             id: 7,
             type: 'f',
             name: 'House',
@@ -196,6 +218,13 @@ var FILES = [
                 name: 'FindMyWayHome.mp3',
                 ifurl: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A459572580&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
                 img_url: 'https://i1.sndcdn.com/artworks-000379593510-i5bail-t1080x1080.jpg'
+              },
+              {
+                id: 25,
+                type: 'afs',
+                name: '24k.mp3',
+                ifurl: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A867558799&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
+                img_url: 'https://i1.sndcdn.com/artworks-xPbf5DPR4Jce-0-t1080x1080.jpg'
               },
               {
                 id: 9,
