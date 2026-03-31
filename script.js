@@ -9,6 +9,8 @@ var crt = true;
 var f_spawn_x = 150;
 var f_spawn_y = 100;
 
+// ids 0-2 are assumed later, so they're pre defined.
+// all other files should have id set by add_file()
 var FILES = [
   {
     id: 2,
@@ -18,7 +20,6 @@ var FILES = [
     <h style="font-size:15px">I\'m first and foremost a systems thinker, but also a dancer (check out my Instagram on the taskbar), avid music enjoyer, and racing jacket enthusiast.</h>'
   },
   {
-    id: 3,
     type: 'tf',
     name: 'Credits.txt',
     content: 'Lots of styling from <a href="https://jdan.github.io/98.css/" target="_blank">98.css</a><br><br><h style="font-size:15px;">\
@@ -30,18 +31,15 @@ var FILES = [
     </h>'
   },
   {
-    id: 13,
     type: 'pdf',
     name: 'Resume.pdf',
     filename: 'manderson-resume.pdf'
   },
   {
-    id: 14,
     type: 'f',
     name: 'WorkExperience',
     files: [
       {
-        id: 16,
         type: 'tf',
         name: 'UTA.txt',
         content: '\
@@ -49,7 +47,7 @@ var FILES = [
         <h style="font-size: 16px">\
         Being a TA has been by far the most enriching experience of my academic life.<br>\
         I\'ve been holding office hours and teaching recitations for Intro to Operating Systems (CS1550) for four semesters now, in addition to TAing for Computer Organization and Assembly Language (CS0447) for one.<br>\
-        I\'ve consistently held ~12 hours of office hours per week, and held 2 hours of instruction per week.<br>\
+        I\'ve consistently held ~12 hours of office hours per week, and held 2 hours of instruction per week, and by my estimate I\'ve taught ~300 students.<br>\
         In Intro to OS, I recieved consistent positive feedback, including the following testimonial on an anonymous feedback form sent out to students:<br><br>\
         "Matthew was just really willing to help and did a good job of not making me feel dumb. He also was willing to actually help with specific problems rather than just offering general feedback that was hard to apply to my own code."<br><br>\
         Both my recitations and office hours drew consistently solid attendance, which I promise, in computer science at Pitt, is a feat worth putting in here.<br><br>\
@@ -61,11 +59,10 @@ var FILES = [
         <li>Building and simulating processors using <a href="https://www.cburch.com/logisim/" target="_blank">Logisim</a></li>\
         </ul><br>\
         P.S:<br>\
-        My absolute favorite project I taught in 1550 was one that involved creation of a graphics library by directly editing the framebuffer, exposed as a file in the Linux distro we used. I adored it because (A) it was low-level and taught systems thinking and (B) it allowed people to be extremely creative when making their demo for it. In the Materials folder there\'s a video of a isometric 3D version of Conway\'s Game of Life that I made to show people what\'s possible that I think is super cool.\
+        My absolute favorite project I taught in 1550 was one that involved creation of a graphics library by directly editing the framebuffer, exposed as a file in the Linux distro we used. I adored it because (A) it was low-level and taught systems thinking and (B) it allowed people to be extremely creative when making their demo for it. In the Materials folder there\'s a video of a isometric 3D version of Conway\'s Game of Life that I think is super cool, which I made to show my students what\'s possible.\
         </h>'
       },
       {
-        id: 18,
         type: 'tf',
         name: 'DataAnalyst.txt',
         content: '\
@@ -74,13 +71,12 @@ var FILES = [
         At Quantum<sup>5</sup>, I have two main roles:<br>\
         First and foremost, I\'m a data analyst. I largely use <a href="https://www.knowi.com/" target="_blank">Knowi</a> to power dashboards that provide insights on employee training.<br>\
         These dashboards run off queries that pull data from multiple sources (mostly Postgres and Mongo) and combine them in complex and cool ways.<br>\
-        In this role, I\'ve learned a lot about data manipulation, both traditional and more complex, functional SQL, and much more.<br><br>\
+        In this role, I\'ve learned a lot about data manipulation, both traditional and more complex, SQL, and much more. It has also required frontend work on the dashboards to make them look exactly to client specification.<br><br>\
         I also do work as an integrations engineer. I write services that leverage webhooks, web scrapers, and the like to pull data from third party services and post it to our databases.<br>\
         These "middlemen", if you will, leverage a plethora of technologies/paradigms/whatever. They\'re mostly written in Python, some Flask for routing, Selenium for web scraping, lots of tooling with OAuth flows, and Redis, to name a few.\
         </h>'
       },
       {
-        id: 22,
         type: 'tf',
         name: 'WebDev.txt',
         content: '\
@@ -88,8 +84,8 @@ var FILES = [
         I worked on both of these sites under <a href="https://peckedbybirds.com/" target="_blank">PeckedByBirds</a>, a two-person web development company I\'m half of. Check it out!</h><br><br>\
         Full Stack Web Developer<br>October 2025<br>UPMC Hand Therapy Conference<br>\
         <h style="font-size: 16px">\
-        A web app (<a href="https://handtherapy.peckedbybirds.com/" target="_blank">here</a>) built for the 9th Annual Pittsburgh Hand Therapy Conference in a whopping one week!<br>\
-        Unfortunately, much of it is password protected, but you can see the landing page at least. We built a full-service application for uploading, hosting, and distribution of materials for the conference.\
+        A web app (<a href="https://handtherapy.peckedbybirds.com/" target="_blank">here</a>) built for the 9th Annual Pittsburgh Hand Therapy Conference.<br>\
+        Much of it is password protected, but you can see the landing page at least. We built a full-service application for uploading, hosting, and distribution of materials for the conference on a 1-week rush order.\
         </h><br><br>\
         Frontend Web Developer<br>March 2024 - August 2024<br>Surreality Lab @ Pitt<br>\
         <h style="font-size: 16px">\
@@ -101,12 +97,10 @@ var FILES = [
         </h>'
       },
       {
-        id: 17,
         type: 'f',
         name: 'Materials',
         files: [
           {
-            id: 19,
             type: 'vf',
             name: 'Conway.gif',
             caption: 'An isometric 3D version of Conway\'s Game of Life, made in the graphics library I helped students build in Intro to OS. Wait until the end for a pretty cool (and super efficient, if I may flex) feature that renders a trail as descending layers. You can also rotate the view! VERY MESSY source code <a href="https://gist.github.com/mja129/b1beb242814a61e05b8153a1ddb8a185" target="_blank">here</a> if you\'re interested.',
@@ -117,12 +111,10 @@ var FILES = [
     ]
   },
   {
-    id: 15,
     type: 'f',
     name: 'Projects',
     files: [
       {
-        id: 20,
         type: 'tf',
         name: 'LogiCap.txt',
         content: '\
@@ -131,7 +123,7 @@ var FILES = [
         <a href="https://github.com/mja129/LogiCap" target="_blank">Source</a><br>\
         LogiCap is a capstone project at Pitt I\'ve had a hand in developing for two semesters running.<br>\
         It\'s a web application meant as a teaching tool for building circuits.<br>\
-        Me and my group members inherited the codebase from a previous group, and it was a very tedious learning experience to the end of jumping into a completely foreign codebase.<br>\
+        Me and my group members inherited the codebase from a previous group, and it was a very tedious (but impactful) learning experience to the end of jumping into a completely foreign codebase.<br>\
         Continued development is almost entirely Svelte and Typescript, but has also required bits of graphic design and backend work.<br>\
         Some of my contributions to the project include:\
         <ul style="margin: 0; padding-left: 20px;">\
@@ -143,7 +135,6 @@ var FILES = [
         </h>'
       },
       {
-        id: 21,
         type: 'tf',
         name: 'Portfolio.txt',
         content: '\
@@ -154,7 +145,7 @@ var FILES = [
         <ul style="margin: 0; padding-left: 20px;">\
         <li>On mobile, multiple tabs can be dragged around at the same time</li>\
         <li>The audio players (mine, not the Soundcloud embeds, they\'re smart) can have as many independent, playing copies as you\'d like. This gets overstimulating very fast, but I think it\'s funny</li>\
-        <li>It\'s ✨RESPONSIVE✨. Try and break this thing, I dare you</li>\
+        <li>It\'s ✨RESPONSIVE✨. Try and break this thing, I dare you (within reason lol)</li>\
         <li>I think the terminal is pretty cool. Pretty useless, but... some of the coolest things are! And it has tab autocomplete :)</li>\
         </ul>\
         I quite hope you enjoy!<br>\
@@ -164,7 +155,6 @@ var FILES = [
     ]
   },
   {
-    id: 4,
     type: 'if',
     name: 'Me.jpg',
     caption: 'Look! It\'s me!',
@@ -177,71 +167,66 @@ var FILES = [
     filename: 'terminal.png'
   },
   {
-    id: 5,
     type: 'f',
     name: 'FunStuff',
     files: [
       {
-        id: 6,
         type: 'f',
         name: 'Music',
         files: [
           {
-            id: 23,
             type: 'f',
             name: 'DanceFavorites',
             files: [
               {
-                id: 24,
                 type: 'afs',
                 name: 'DropReyrzyRmx.mp3',
                 ifurl: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A869045134&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
                 img_url: 'https://i1.sndcdn.com/artworks-NFAcCgnZXZVdvCnS-aZZcLw-t1080x1080.jpg'
               },
               {
-                id: 26,
                 type: 'afs',
                 name: 'SlowItDown.mp3',
                 ifurl: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1128332830&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
                 img_url: 'https://i1.sndcdn.com/artworks-z69EuPzBeYMlJkCs-bFtdbA-t1080x1080.jpg'
+              },
+              {
+                type: 'afs',
+                name: 'TreacherousTwins(WzaFlip).mp3',
+                ifurl: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1664842185&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
+                img_url: 'https://i1.sndcdn.com/artworks-9eYw5s1QM3zxYcCH-4w4BdQ-t1080x1080.jpg'
               }
             ]
           },
           {
-            id: 7,
             type: 'f',
             name: 'House',
             files: [
               {
-                id: 12,
                 type: 'afs',
                 name: 'FindMyWayHome.mp3',
                 ifurl: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A459572580&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
                 img_url: 'https://i1.sndcdn.com/artworks-000379593510-i5bail-t1080x1080.jpg'
               },
               {
-                id: 25,
                 type: 'afs',
                 name: '24k.mp3',
                 ifurl: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A867558799&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
                 img_url: 'https://i1.sndcdn.com/artworks-xPbf5DPR4Jce-0-t1080x1080.jpg'
               },
               {
-                id: 9,
                 type: 'af',
                 name: 'BadGirl.mp3',
                 audio_url: 'https://ncs.io/track/download/bb50d4b8-501b-4515-b495-294da2767cad?_gl=1*17cc72*_up*MQ..*_ga*MjI2MzU0MDQxLjE3NzEzNTkxNDM.*_ga_PFS54FR7NV*czE3NzEzNTkxNDIkbzEkZzAkdDE3NzEzNTkxNTgkajQ0JGwwJGgw',
                 img_url: 'https://linkstorage.linkfire.com/medialinks/images/e1bc4ec5-fbd9-4f1c-b6aa-67c656cfd529/artwork-440x440.jpg'
               },
               {
-                id: 8,
                 type: 'af',
                 name: 'MakeMeFeel.mp3',
                 audio_url: 'https://ncs.io/track/download/0182147b-ef4e-4ee2-8aa5-5d4c12d56d3c?_gl=1*1x0ktwp*_up*MQ..*_ga*MTQ3Njg4MDMzOS4xNzcwODYxODQ0*_ga_PFS54FR7NV*czE3NzA4NjE4NDMkbzEkZzAkdDE3NzA4NjE4NDMkajYwJGwwJGgw',
                 img_url: 'https://linkstorage.linkfire.com/medialinks/images/7cab78f6-2a5e-4ec2-9253-c84917dd3d7f/artwork-440x440.jpg'
               },
               {
-                id: 11,
                 type: 'af',
                 name: 'NeverGiveUpOnLovingYou.mp3',
                 audio_url: 'https://ncs.io/track/download/a6fc48cd-f33e-476f-b3f6-88ae77c9aa2f?_gl=1*1r8hj4x*_up*MQ..*_ga*MTI5MjEwMzMwNS4xNzcwOTE2MTY0*_ga_PFS54FR7NV*czE3NzA5MTYxNjMkbzEkZzAkdDE3NzA5MTY3MDEkajYwJGwwJGgw',
@@ -272,20 +257,24 @@ function init_window_manager() {
   for (var ft of ['tf', 'if', 'f', 'af', 'afs', 'vf']) {
     template_windows[ft] = document.getElementById(`${ft}-window`)
   }
-  FILES.forEach((file) => add_file(file, folder_container))
+  FILES.forEach((file, index, arr) => add_file(file, index, arr, folder_container))
   // open Welcome.txt
   file_click(2, 'tf')
 }
 
 // add ghost divs for file icon and window
-function add_file(file, icon_container) {
+var id = 2;
+function add_file(file, index, arr, icon_container) {
+  if (!file.hasOwnProperty('id')) {
+    arr[index].id = id++;
+  }
   var type = file.type;
   var template_window;
   if (type != 'pdf') {
     if (type == 'exe') {
-      template_window = document.getElementById(`exe${file.id}-window`)
+      template_window = document.getElementById(`exe${file.id}-window`);
     } else {
-      template_window = template_windows[type]
+      template_window = template_windows[type];
     }
   }
 
@@ -356,7 +345,7 @@ function add_file(file, icon_container) {
       break;
     case 'f':
       var internal_container = window.firstElementChild.nextElementSibling.firstElementChild;
-      file.files.forEach((subfile) => {add_file(subfile, internal_container)});
+      file.files.forEach((subfile, index, arr) => {add_file(subfile, index, arr, internal_container)});
       break;
     case 'af':
       window.dataset.url = file.audio_url

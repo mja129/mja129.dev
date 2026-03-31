@@ -356,7 +356,8 @@ body {
 .file > p {
     text-align: center;
     color: var(--black);
-    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .f-close {
@@ -412,6 +413,7 @@ body {
 .img-caption {
     margin-top: 8px;
     max-width: 300px;
+    font-size: 10pt;
 }
 
 .if-img-body {
